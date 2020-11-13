@@ -22,7 +22,7 @@ function checkCount(){
             cheked.push(listChecks[check])
         }
     }
-    uncheckedCountSpan.innerHTML = cheked.length
+    uncheckedCountSpan.innerHTML = listChecks.length - cheked.length
 }
 
 function newTodo() {
@@ -52,6 +52,7 @@ function newTodo() {
     enteredText.value = "" 
 
     intemCount()
+    checkCount()
 }
 
 
