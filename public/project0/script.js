@@ -9,6 +9,21 @@ const list = document.getElementById('todo-list')
 const itemCountSpan = document.getElementById('item-count')
 const uncheckedCountSpan = document.getElementById('unchecked-count')
 
+function intemCount(){
+    let listElements = document.querySelectorAll(".todo-container")
+    itemCountSpan.innerHTML = listElements.length
+}
+
+function checkCount(){
+    let cheked = []
+    let listChecks = document.querySelectorAll(".todo-checkbox")
+    for (check in listChecks){
+        if (listChecks[check].cheked){
+            console.log("sim")
+        }
+    }
+}
+
 function newTodo() {
     let enteredText = document.getElementById("textEntry")
 
@@ -33,6 +48,11 @@ function newTodo() {
     item.appendChild(container)
     list.appendChild(item)
 
-    enteredText.value = ""
-    
+    enteredText.value = "" 
+
+    intemCount()
 }
+
+
+
+
