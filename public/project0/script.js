@@ -18,10 +18,11 @@ function checkCount(){
     let cheked = []
     let listChecks = document.querySelectorAll(".todo-checkbox")
     for (check in listChecks){
-        if (listChecks[check].cheked){
-            console.log("sim")
+        if (listChecks[check].checked){
+            cheked.push(listChecks[check])
         }
     }
+    uncheckedCountSpan.innerHTML = cheked.length
 }
 
 function newTodo() {
@@ -36,10 +37,10 @@ function newTodo() {
     container.setAttribute("class", classNames.TODO_ITEM)
     checkbox.setAttribute("class", classNames.TODO_CHECKBOX)
     checkbox.setAttribute("type", "checkbox")
+    checkbox.addEventListener("click", checkCount)
     todoText.setAttribute("class", classNames.TODO_TEXT)
-    btnDelete.setAttribute("class", classNames.TODO_DELETE)
-
     todoText.innerHTML = enteredText.value
+    btnDelete.setAttribute("class", classNames.TODO_DELETE)    
     btnDelete.innerHTML = "Delete"
 
     container.appendChild(checkbox)
