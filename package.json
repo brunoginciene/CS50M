@@ -1,0 +1,25 @@
+{
+  "name": "cs50m",
+  "version": "1.0.0",
+  "description": "The goal of this project is to practice JavaScript and its paradigms by creating a TODO app. This app should be able to add TODOs and track the number of total TODOs as well as the number of unchecked TODOs.",
+  "main": "script.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brunoginciene/CS50M.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brunoginciene/CS50M/issues"
+  },
+  "homepage": "https://github.com/brunoginciene/CS50M#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}
