@@ -25,6 +25,12 @@ function checkCount(){
     uncheckedCountSpan.innerHTML = listChecks.length - cheked.length
 }
 
+function deleteItem(event){
+    event.target.parentNode.parentNode.remove()
+    intemCount()
+    checkCount()
+}
+
 function newTodo() {
     let enteredText = document.getElementById("textEntry")
 
@@ -40,14 +46,15 @@ function newTodo() {
     checkbox.addEventListener("click", checkCount)
     todoText.setAttribute("class", classNames.TODO_TEXT)
     todoText.innerHTML = enteredText.value
-    btnDelete.setAttribute("class", classNames.TODO_DELETE)    
+    btnDelete.setAttribute("class", classNames.TODO_DELETE)
+    btnDelete.addEventListener("click", deleteItem)    
     btnDelete.innerHTML = "Delete"
 
     container.appendChild(checkbox)
     container.appendChild(todoText)
     container.appendChild(btnDelete)
     item.appendChild(container)
-    list.appendChild(item)
+    list.insertBefore(item, list.childNodes[0]);
 
     enteredText.value = "" 
 
